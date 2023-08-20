@@ -32,28 +32,32 @@ export function Experts() {
   const gridColsClass = activeExpertList.length > 1 ? 'grid-cols-2' : 'grid-cols-1';
 
   return (
-    <div id="specialists"  className="flex flex-col items-center space-y-8">
-      <div className="flex space-x-[-1px]">
+    <div id="specialists" className="flex flex-col items-center space-y-8">
+      <div className="flex flex-wrap justify-center space-x-[-1px]"> {/* Updated to flex-wrap and responsive margin */}
         {experts.map(expertCategory => (
           <div
             key={expertCategory.name}
             className={`${
-              expertCategory.name === activeExpert ? 'mt-8' : ''
-            } ${expertCategory.color} w-56 h-56 rounded-full flex items-center justify-center cursor-pointer transition-transform transform duration-300 hover:translate-y-2`}
+              expertCategory.name === activeExpert ? 'mt-4' : 'mt-2' /* Adjusted spacing for mobile */
+            } ${expertCategory.color} w-20 h-20 md:w-56 md:h-56 rounded-full flex items-center justify-center cursor-pointer transition-transform transform duration-300 hover:translate-y-2`}
             onClick={() => setActiveExpert(expertCategory.name)}
           >
             {expertCategory.name}
           </div>
         ))}
       </div>
-      <div className={`w-[70%] mt-8`}>
+      <div className="w-[70%] mt-6 md:mt-8"> {/* Adjusted margin for mobile */}
         <div className={`grid ${gridColsClass} gap-6 justify-center`}>
           {activeExpertList.map(expert => (
             <div key={expert.name} className="flex mb-8 mx-auto rounded-xl overflow-hidden shadow-lg">
-              <img src={expert.imageUrl} alt={expert.name} className="w-1/2 h-56 object-cover" />
+              <img src={expert.imageUrl} alt={expert.name} className="w-1/2 h-40 md:w-1/2 md:h-56 object-cover" /> {/* Adjusted image size for mobile */}
               <div className={`w-1/2 flex flex-col justify-center p-4 ${activeExpertData.color}`}>
-                <h3 className="text-xl font-bold mb-4 text-white">{expert.name}</h3>
-                <p className="text-sm text-white">{expert.description}</p>
+                <h3 className="text-md md:text-xl font-bold mb-2 md:mb-4 text-white"> {/* Adjusted font size for mobile */}
+                  {expert.name}
+                </h3>
+                <p className="text-xs md:text-sm text-white"> {/* Adjusted font size for mobile */}
+                  {expert.description}
+                </p>
               </div>
             </div>
           ))}
@@ -62,14 +66,3 @@ export function Experts() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

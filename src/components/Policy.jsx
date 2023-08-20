@@ -21,20 +21,20 @@ export function Policy() {
   };
 
   return (
-    <div id="policy"  className="h-screen flex items-center justify-center relative">
-      <div className="flex space-x-4 w-full justify-center items-center">
+    <div id="policy" className="h-screen flex items-center justify-center relative">
+      <div className="flex flex-col md:flex-row md:space-x-4 w-full justify-center items-center">
 
         {/* School Policy */}
-        <div className="flex flex-col items-center w-1/2">
+        <div className="flex flex-col items-center w-full md:w-1/2">
           <div className="text-black text-3xl font-bold text-center py-5 mb-6">
             School Policy
           </div>
-          <ul className="relative w-[500px] h-[400px]">
+          <ul className="relative w-[500px] md:w-[700px] h-[400px] md:h-[500px]">
             {schoolCards.map((cardData, index) => {
               return (
                 <motion.li
                   key={cardData.color}
-                  className={`absolute w-[500px] h-[400px] rounded-md cursor-grab flex flex-col justify-center items-center p-4`}
+                  className={`absolute w-[500px] md:w-[700px] h-[400px] md:h-[500px] rounded-md cursor-grab flex flex-col justify-center items-center p-4`}
                   style={{ backgroundColor: cardData.color }}
                   animate={{
                     top: `${index * -CARD_OFFSET}px`,
@@ -57,19 +57,19 @@ export function Policy() {
         </div>
 
         {/* Vertical Divider */}
-        <div className="border-l-2 h-[520px]"></div>
+        <div className="border-l-2 lg:h-[520px] md:h-[600px]"></div>
 
         {/* Health Policy */}
-        <div className="flex flex-col items-center w-1/2">
+        <div className="flex flex-col items-center w-full md:w-1/2">
           <div className="text-black text-3xl font-bold text-center py-5 mb-6">
             Health Policy
           </div>
-          <ul className="relative w-[500px] h-[400px]">
+          <ul className="relative w-[500px] md:w-[700px] h-[400px] md:h-[500px]">
             {healthCards.map((cardData, index) => {
               return (
                 <motion.li
                   key={cardData.color}
-                  className={`absolute w-[500px] h-[400px] rounded-md cursor-grab flex flex-col justify-center items-center p-4`}
+                  className={`absolute w-[500px] md:w-[700px] h-[400px] md:h-[500px] rounded-md cursor-grab flex flex-col justify-center items-center p-4`}
                   style={{ backgroundColor: cardData.color }}
                   animate={{
                     top: `${index * -CARD_OFFSET}px`,

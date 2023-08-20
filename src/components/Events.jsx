@@ -1,3 +1,6 @@
+
+import { PlusIcon } from '@heroicons/react/20/solid'
+
 const posts = [
   {
     id: 1,
@@ -49,6 +52,11 @@ export function Events() {
                     <img src={post.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
                     {post.author.name}
                   </div>
+                  <button
+                    type="button"
+                      className="rounded-full bg-indigo-600 p-1.5 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        <PlusIcon className="h-5 w-5" aria-hidden="true" />
+                  </button>
                 </div>
               </div>
               <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
@@ -69,3 +77,4 @@ export function Events() {
     </div>
   )
 }
+
